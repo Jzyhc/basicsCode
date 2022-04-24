@@ -12,8 +12,13 @@ function isEqual(obj1, obj2) {
   if (!isObject) {
     return false;
   }
-  // 判断长度是否相等
 
+  // 判断是否是相同引用
+  if (Object.is(obj1, obj2)) {
+    return true;
+  }
+  
+  // 判断长度是否相等
   const obj1Lth = Object.keys(obj1).length;
   const obj2Lth = Object.keys(obj2).length;
   if (obj1Lth !== obj2Lth) {
@@ -43,7 +48,7 @@ const a = {
   age: 18,
   c: {
     a: 1,
-    b:null
+    b: null,
   },
 };
 
@@ -52,13 +57,13 @@ const b = {
   age: "18",
   c: {
     a: 1,
-    b:null
+    b: null,
   },
 };
 // const b = {
 //   name: "wang",
 //   age: "22",
 // };
-console.info(Object.is(a,b));
+console.info(Object.is(a, b));
 
 console.log(isEqual(a, b));

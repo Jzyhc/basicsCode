@@ -46,7 +46,7 @@ class Observable {
 // 装饰器模式
 
 const Man = function () { 
-  this.run = function () {   
+  this.run = function () {
      console.log('跑步'); 
   };
 };
